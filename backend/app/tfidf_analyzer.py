@@ -7,8 +7,12 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 
 # Download required NLTK data (quietly to avoid repeated downloads)
-nltk.download('punkt', quiet=True)
-nltk.download('stopwords', quiet=True)
+try:
+    nltk.download('punkt_tab', quiet=True)
+    nltk.download('punkt', quiet=True)
+    nltk.download('stopwords', quiet=True)
+except Exception as e:
+    print(f"Error downloading NLTK resources: {e}")
 
 # Preprocess text (cleaning, tokenizing, removing stopwords)
 def preprocess_text(text):
@@ -19,6 +23,8 @@ def preprocess_text(text):
     text = re.sub(r'\b\d{4}\b', '', text)  # Remove years like 20xx
     text = re.sub(r'\s+', ' ', text).strip()
     text = re.sub(r'\bxx\b', '', text)     # Remove 'xx'
+    text = re.sub(r'[•➢]', '', text)  # Remove common bullet point symbols
+    text = re.sub(r'[^\w\s]', '', text)  # Remove punctuation
     # Tokenize
     tokens = word_tokenize(text)
     # Remove stopwords

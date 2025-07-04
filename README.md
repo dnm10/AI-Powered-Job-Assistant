@@ -1,3 +1,4 @@
+This is a job-description and resume anayzer project which takes input of job desctiptions from recruiters and input from candidates of their resume , analyzes the text and then based on similarity it matches the resume to the job description for easily enhancing and making ease of experience for candidates and recruiters.
 UPDATE log:
 11-JUNE-2025
 9:45:PM : PROGRAMMED PDF_parser.py file , it is extracting the text from pdf file and storing it in a text file only if the program is runned from vs code terminal .
@@ -17,7 +18,7 @@ now cut the requirements.txt file from the root directory and paste it in the Sc
 5. > > pip install -r requirements.txt
    > > open a new terminal
 6. > > cd .\AI-Powered-Job-Assistant\
-
+cd pytAI-Powered-Job-Assistant\backend\app
 7. > > uvicorn app.main:app --reload
 
 Remember to keep atleast one pdf file inside utils "AI-Powered-Job-Assistant\backend\utils"

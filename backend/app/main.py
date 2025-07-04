@@ -9,7 +9,8 @@ UTILS_DIR = os.path.join(BASE_DIR, '..', 'utils')
 APP_DIR = BASE_DIR
 sys.path.append(os.path.abspath(UTILS_DIR))
 sys.path.append(os.path.abspath(APP_DIR))
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))) 
+#This means Python will now look in this upper-level directory when importing modules.
 from backend.utils.pdf_parser import textextractionfunction
 from tfidf_analyzer import analyze_resume_with_tfidf
 
